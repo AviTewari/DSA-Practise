@@ -6,11 +6,13 @@
 #         self.right = right
 class Solution:
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+        if root is None:
+            return []
+            
         res=[]
         q = collections.deque()
         q.append(root)
-        if root is None:
-            return []
+        
 
         while q:
             qlen = len(q)
