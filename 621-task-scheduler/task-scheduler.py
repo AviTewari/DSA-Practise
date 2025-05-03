@@ -1,8 +1,8 @@
 class Solution:
     def leastInterval(self, tasks: List[str], n: int) -> int:
-        count = defaultdict(int)
-        for task in tasks:
-            count[task] += 1
+        count = Counter(tasks)
+        # for task in tasks:
+        #     count[task] += 1
         maxheap = [-cnt for cnt in count.values()]
         heapq.heapify(maxheap)
         q=deque()
