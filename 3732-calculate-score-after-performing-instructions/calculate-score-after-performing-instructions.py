@@ -1,16 +1,15 @@
 class Solution:
     def calculateScore(self, instructions: List[str], values: List[int]) -> int:
-        n =len(instructions) 
-        visited = [0]* n
-        i = 0 
         score = 0
-        while 0<=i<n and not visited[i]:
-            visited[i] = True
-            if instructions[i] == 'add':
+        visited = [0]*len(instructions)
+        i=0
+        while 0<=i<len(instructions) and visited[i] == 0:
+            visited[i]+=1
+            if instructions[i] == "add":
                 score += values[i]
-                i+=1
-            elif instructions[i] == 'jump':
+                i += 1
+            elif instructions[i] == "jump":
                 i += values[i]
         return score
-
-        
+            
+            
